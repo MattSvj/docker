@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: my_web_image:prod
+    ports:
+      - "80:5000"
+    environment:
+      - ENV=production
+  db:
+    image: my_db_image:prod
+    volumes:
+      - db_data_prod:/var/lib/postgresql/data
+volumes:
+  db_data_prod:

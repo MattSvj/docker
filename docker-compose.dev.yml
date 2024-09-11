@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: my_web_image:dev
+    ports:
+      - "5000:5000"
+    environment:
+      - ENV=development
+  db:
+    image: my_db_image:dev
+    volumes:
+      - db_data_dev:/var/lib/postgresql/data
+volumes:
+  db_data_dev:

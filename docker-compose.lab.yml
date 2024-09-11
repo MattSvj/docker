@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: my_web_image:lab
+    ports:
+      - "8080:5000"
+    environment:
+      - ENV=laboratory
+  db:
+    image: my_db_image:lab
+    volumes:
+      - db_data_lab:/var/lib/postgresql/data
+volumes:
+  db_data_lab:

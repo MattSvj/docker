@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    image: web_image
+    ports:
+      - "5000:5000"
+  db:
+    image: db_image
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
